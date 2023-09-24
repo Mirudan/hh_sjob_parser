@@ -8,11 +8,11 @@ def get_search_query_json_data(json_instance):
     Выполняет поиск по сайтам вакансий и записывает результаты в файл JSON
     """
     search_query = input('Введите базовый запрос для поиска вакансии: ')
-    number_of_vacancies = input('Сколько вакансий необходимо получить с каждого сайта (не более 100): ')
+    number_of_vacancies = input(f'Сколько вакансий необходимо получить с каждого сайта (не более {MAX_VACANCIES}): ')
 
     try:
         number_of_vacancies = int(number_of_vacancies)
-        if number_of_vacancies <= 0 or number_of_vacancies > 100:
+        if number_of_vacancies <= 0 or number_of_vacancies > MAX_VACANCIES:
             number_of_vacancies = MAX_VACANCIES
     except ValueError:
         number_of_vacancies = MAX_VACANCIES
